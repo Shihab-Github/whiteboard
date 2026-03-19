@@ -1,5 +1,7 @@
-export const App = () => (
-  <div className="App">
-    <div>Hellow World</div>
-  </div>
-)
+export const App = () => {
+  return (
+    <div className="App">
+      <div>Hellow World</div>
+    </div>
+  )
+}
