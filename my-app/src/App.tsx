@@ -1,9 +1,9 @@
-import { Whiteboard } from "./whiteboard/whiteboard.tsx"
+import { Whiteboard } from "./whiteboard/components/whiteboard.tsx"
 
 export const App = () => {
   return (
     <div className="App">
-      <div>Hellow World</div>
+      <div>Hello World</div>
       <Whiteboard />
     </div>
   )

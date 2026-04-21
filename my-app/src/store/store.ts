@@ -1,28 +1,14 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit"
-import type { PayloadAction } from "@reduxjs/toolkit"
+import { configureStore } from "@reduxjs/toolkit"
+import whiteboardSliceReducer from '../whiteboard/slices/whiteboard.slice.ts'
 
-type WhiteboardState = {
-  tool: string | null
-}
 
-const initialState: WhiteboardState = {
-  tool: null,
-}
-
-const whiteboardSlice = createSlice({
-  name: "whiteboard",
-  initialState,
-  reducers: {
-    setToolType: (state, action: PayloadAction<string | null>) => {
-      state.tool = action.payload
-    },
-  },
-})
-
-export const { setToolType } = whiteboardSlice.actions
 
 export const store = configureStore({
   reducer: {
-    whiteboard: whiteboardSlice.reducer,
+    whiteboard: whiteboardSliceReducer,
   },
 })
+
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
